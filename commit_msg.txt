@@ -1,0 +1,14 @@
+feat: initial release of WTPS backend with Firebase Admin integration
+
+This initial commit establishes the foundational NestJS architecture for the 
+Waste Water Treatment Plant Management System (WTPS) backend, setting up secure 
+server-side authentication, custom role management, and database seeding.
+
+Core Implementations:
+- build: initialize NestJS project and strict `.gitignore` configurations to ensure `firebase-service-account.json` and environmental secrets remain secure
+- feat(firebase): integrate Firebase Admin SDK to handle secure server-side interactions and custom user claims for Role-Based Access Control (RBAC)
+- feat(auth): implement `AuthService` and registration DTOs supporting comprehensive user data validation, including phone numbers
+- feat(seed): implement a robust `OnModuleInit` database seeding script to automatically guarantee the existence of a default master admin account (`admin@wtps.com`) on server startup
+- fix(auth): restructure backend registration and role assignment logic to prevent race conditions and duplicate user record generation in Firestore
+
+This release solidifies the backend infrastructure, preparing the API to interface securely with the WTPS frontend and handle extensive operator data.
